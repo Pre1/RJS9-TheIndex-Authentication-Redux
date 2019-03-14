@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 
+import Logout from "./Logout";
+
 // Logo
 import logo from "./assets/theindex.svg";
 
@@ -21,6 +23,9 @@ class Sidebar extends Component {
           <Link to="/signup" className="btn btn-success m-2 float-left">
             Signup
           </Link>
+
+            <Logout />
+            
         </div>
       </div>
     );
