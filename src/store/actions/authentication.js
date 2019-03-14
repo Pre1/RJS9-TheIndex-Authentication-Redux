@@ -28,9 +28,10 @@ export const checkForExpiredToken = () => {
       // Check token expiration
       if (user.exp >= currentTime) {
         // Set auth token header
-        setAuthToken(token);
+        // setAuthToken(token);
+        
         // Set user
-        dispatch(setCurrentUser(user));
+        dispatch(setCurrentUser(token));
       } else {
         dispatch(logout());
       }

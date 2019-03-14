@@ -42,7 +42,7 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchAllAuthors: () => dispatch(actionCreators.fetchAuthors())
+    fetchAllAuthors: () => dispatch(actionCreators.fetchAuthors()),
     checkForExpiredToken: () => dispatch(actionCreators.checkForExpiredToken())
   };
 };
