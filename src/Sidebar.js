@@ -41,11 +41,15 @@ class Sidebar extends Component {
 }
 
 
+
+
+
 const mapStateToProps = state => {
   return {
     user: state.rootAuth.user
   };
 };
+
 
 
 export default connect(

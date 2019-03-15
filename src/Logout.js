@@ -9,9 +9,9 @@ const Logout = props => {
 	return (
 		<button 
 		className="btn btn-danger m-2 float-left" 
-		onClick={() => props.logout()}>
+		onClick={props.logout}>
 
-			Logout {props.user ? props.user.username : ""}
+			Logout {props.user.username}
 
 		</button>
 	)

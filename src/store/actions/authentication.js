@@ -86,32 +86,31 @@ export const signup = (userData, history) => {
 	}
 };
 
-export const logout = (token) => {
-	return dispatch => {
-		setCurrentUser()
-	} 
-};
+
+export const logout = () => setCurrentUser();
 
 
 const setCurrentUser = token => {
-	let user;
+	let user = null;
 	if (token) {
-		let user = jwt_decode(token)
+		user = jwt_decode(token)
 		
 		localStorage.setItem("token", token);
 		
-		axios.defaults.headers.common.Authorization = `JWT ${token}`
+		axios.defaults.headers.common.Authorization = `jwt ${token}`
 		console.log("decoded user", user)
 	} 
 
 	// for logout
 	else {
+		console.log("localStorage.removeItem(\"token\");")
 		localStorage.removeItem("token");
 		delete axios.defaults.headers.common.Authorization
 	}
 
+	console.log("SET_CURRENT_USER return", user)
 	return {
-			type: actionTypes.SET_CURRENT_USER,
-			payload: user
-		}
+		type: actionTypes.SET_CURRENT_USER,
+		payload: user
+	};
 };

@@ -11,6 +11,7 @@ import AuthorsList from "./AuthorsList";
 import AuthorDetail from "./AuthorDetail";
 import Signup from "./SignupForm";
 import Login from "./LoginForm";
+import Logout from "./Logout";
 
 class App extends Component {
   componentDidMount() {
@@ -31,6 +32,7 @@ class App extends Component {
               <Route path="/authors" component={AuthorsList} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
+              <Route path="/logout" component={Logout} />
               <Redirect to="/authors" />
             </Switch>
           </div>
