@@ -72,7 +72,7 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    longin: (userData, history) =>
+    login: (userData, history) =>
       dispatch(actionCreators.login(userData, history))
   };
 };

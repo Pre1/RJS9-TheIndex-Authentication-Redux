@@ -80,7 +80,8 @@ export const signup = (userData, history) => {
 			dispatch(setCurrentUser(token)) 
 			history.push("/authors")
 		} catch(e) {
-			console.log(e);
+			console.log("LOG IN ERROR")
+			console.error(e);
 		}
 	}
 };
