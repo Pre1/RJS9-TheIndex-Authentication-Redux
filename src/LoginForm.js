@@ -16,7 +16,11 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log("submit this.state: ", this.state)
+    console.log("submit this.props: ",this.props)
     this.props.login(this.state, this.props.history);
+    
+    // console.log()
   };
 
   render() {

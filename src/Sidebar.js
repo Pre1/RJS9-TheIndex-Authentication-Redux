@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { connect } from "react-redux";
+import * as actionCreators from "./store/actions/index";
+
 
 import Logout from "./Logout";
 
 // Logo
 import logo from "./assets/theindex.svg";
 
+
 class Sidebar extends Component {
   render() {
+    console.log("SideBar ===> this.props.user", this.props.user)
     return (
       <div id="sidebar">
         <img src={logo} className="logo" alt="the index logo" />
@@ -35,4 +40,15 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar;
+
+const mapStateToProps = state => {
+  return {
+    user: state.rootAuth.user
+  };
+};
+
+
+export default connect(
+  mapStateToProps
+)(Sidebar);
+

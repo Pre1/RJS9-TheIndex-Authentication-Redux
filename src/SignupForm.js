@@ -18,7 +18,7 @@ class Signup extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.signup(this.state)
+    this.props.signup(this.state, this.props.history)
   };
 
   render() {
@@ -87,7 +87,7 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    signup: userData => dispatch(actionCreators.signup(userData))
+    signup: (userData, history) => dispatch(actionCreators.signup(userData, history))
   };
 };
 

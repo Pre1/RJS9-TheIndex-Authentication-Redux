@@ -29,7 +29,7 @@ export const checkForExpiredToken = () => {
       if (user.exp >= currentTime) {
         // Set auth token header
         // setAuthToken(token);
-        
+
         // Set user
         dispatch(setCurrentUser(token));
       } else {
@@ -41,12 +41,15 @@ export const checkForExpiredToken = () => {
 
 export const login = (userData, history) => {
 	return async dispatch => {
+		console.log("ACTIONS login");
 		try {
+			console.log("ACTIONS login - post");
 			const res = await instance.post(
 				"/login/",
 				userData
 			)
 
+			console.log("ACTIONS login");
 			const token = res.data.token
 
 			console.log("res.data: ", res.data)
@@ -56,7 +59,7 @@ export const login = (userData, history) => {
 			dispatch(setCurrentUser(token))
 			history.push("/authors") 
 		} catch(e) {
-			console.log(e);
+			console.error(e);
 		}
 	}
 };
